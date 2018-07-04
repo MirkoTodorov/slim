@@ -1,0 +1,19 @@
+{# <h1> Hello Mirko!!!</h1> #}
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <h3>These are the Members:</h3>
+    {% if message is defined %}
+        {{message}}
+    {% endif %}
+    <ul>
+        {% for user in users %}
+            <li>{{ user.name|e }} </li>
+                <a role="button" class="btn btn-danger" href="/user/delete/{{user.id}}">Delete</a>
+                <a role="button" class="btn btn-success" href="/user/edit/{{user.id}}">Edit</a>
+           
+        {% endfor %}
+    </ul>
+
+{% endblock %}

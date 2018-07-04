@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+
+{% block content %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                {% if message is defined %}
+                    {{message}}
+                {% endif %}
+                <h1>Edit User</h1>
+                <form action="/user/edit/{{user.id}}" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" value="{{user.name}}">                        
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Password</label>
+                        <input type="text" class="form-control" id="surname" name="surname" placeholder="Enter Surname" value="{{user.surname}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" class="form-control" id="age" name="age" placeholder="Enter Age" value="{{user.age}}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </form>
+            </div>
+        </div>        
+    </div>
+{% endblock %}

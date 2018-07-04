@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+
+{% block content %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                {% if message is defined %}
+                    {{message}}
+                {% endif %}
+                <h1>Create User</h1>
+                <form action="/user/create" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">                        
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Password</label>
+                        <input type="text" class="form-control" id="surname" name="surname" placeholder="Enter Surname">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" class="form-control" id="age" name="age" placeholder="Enter Age">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>        
+    </div>
+{% endblock %}
